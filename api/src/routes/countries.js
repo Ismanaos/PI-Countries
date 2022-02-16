@@ -1,12 +1,18 @@
-const { Router } = require('express');
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
+const express = require("express");
+const Country = require("../models/Country");
+const server = express();
+const STATUS_USER_ERROR = 422;
 
+server.use(express.json());
 
-const router = Router();
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+server.get('/countries', async function(req, res) {
+    fetch('https://restcountries.com/v3/all')
+    .then(p => p.json())
+    .then(country => {
+        
+    });
+                    
+})
 
 
 // [ ] GET /countries:
@@ -19,7 +25,3 @@ const router = Router();
 // [ ] GET /countries?name="...":
 // Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
 // Si no existe ningún país mostrar un mensaje adecuado
-// [ ] POST /activity:
-// Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
-// Crea una actividad turística en la base de datos
-module.exports = router;
