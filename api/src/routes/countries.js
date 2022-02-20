@@ -9,9 +9,11 @@ server.get('/countries', async function(req, res) {
     fetch('https://restcountries.com/v3/all')
     .then(p => p.json())
     .then(country => {
-        
+        Country:{
+           
+        }
     });
-                    
+
 })
 
 
